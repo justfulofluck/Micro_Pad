@@ -1,0 +1,7 @@
+https://www.hackster.io/simon-mugo/atmega32u4-customize-mini-development-board-09667a
+https://www.hackster.io/kutluhan-aktar/arduino-based-atmega32u4-mouse-and-keyboard-controller-0f75c5
+https://www.hackster.io/brian-lough/diy-bluetooth-macro-keypad-d30934
+https://www.hackster.io/simon-mugo/my-own-customized-arduino-board-76725d
+
+
+https://www.hackster.io/maninderbirgulshan/atmega32u4-au-breakout-board
