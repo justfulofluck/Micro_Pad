@@ -1,0 +1,5 @@
+root@clear:/etc# cat resolv.conf
+search bluegglob.local
+nameserver 192.168.1.1
+nameserver 8.8.8.8
+nameserver 8.8.4.4
