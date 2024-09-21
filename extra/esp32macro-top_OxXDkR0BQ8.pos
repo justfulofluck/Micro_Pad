@@ -1,0 +1,34 @@
+### Footprint positions - created on 2024-09-05T19:35:09+0300 ###
+### Printed by KiCad version 8.0.1
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                          Package                                                       PosX       PosY       Rot  Side
+C1        10uF                         CP_EIA-3216-18_Kemet-A                                    148.2125   -87.4250  -90.0000  top
+C2        10uF                         CP_EIA-3216-18_Kemet-A                                    155.2125   -87.4000  -90.0000  top
+C3        1uF                          C_0402_1005Metric                                         152.7500   -82.9150   90.0000  top
+C4        0.1uF                        C_0402_1005Metric                                         153.7500   -82.9100   90.0000  top
+C5        22pF                         C_0402_1005Metric                                         151.5560  -110.4670    0.0000  top
+C6        22pF                         C_0402_1005Metric                                         149.4060  -110.4920    0.0000  top
+C7        1uF                          C_0402_1005Metric                                         144.6940  -112.4580   90.0000  top
+C8        1uF                          C_0402_1005Metric                                         151.7000   -82.9150   90.0000  top
+C9        0.1uF                        C_0402_1005Metric                                         146.6125   -88.8200  -90.0000  top
+D1        LED                          LED_0805_2012Metric                                       145.7625   -83.0900    0.0000  top
+D2        1N4148WS                     D_SOD-323                                                 149.4000   -82.9650    0.0000  top
+D3        LED                          LED_0805_2012Metric                                       153.5690  -111.6455   90.0000  top
+D4        LED                          LED_0805_2012Metric                                       147.3440  -111.6705   90.0000  top
+F1        500mA                        Fuse_1206_3216Metric                                      151.7375   -88.8000    0.0000  top
+J2        Screw_Terminal_01x17         PinHeader_1x17_P2.54mm_Vertical                           138.4750   -73.4000    0.0000  top
+J3        USB_C_Receptacle_USB2.0_16P  USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal   150.4100   -73.9200  180.0000  top
+J4        Screw_Terminal_01x17         PinHeader_1x17_P2.54mm_Vertical                           161.1000   -73.3850    0.0000  top
+R1        5.1k                         R_0402_1005Metric                                         155.8750   -82.9150  -90.0000  top
+R2        5.1k                         R_0402_1005Metric                                         154.8300   -82.9150  -90.0000  top
+R3        1K                           R_0402_1005Metric                                         145.5850   -84.6500    0.0000  top
+R4        10K                          R_0402_1005Metric                                         145.7690  -110.4830   90.0000  top
+R5        330                          R_0402_1005Metric                                         155.1080  -112.3655  -90.0000  top
+R6        330                          R_0402_1005Metric                                         145.7690  -112.4580  -90.0000  top
+R7        5.1k                         R_0402_1005Metric                                         145.5775   -88.8550  -90.0000  top
+R8        5.1k                         R_0402_1005Metric                                         144.5125   -88.8400  -90.0000  top
+U1        ATmega32U4-A                 TQFP-44_10x10mm_P0.8mm                                    149.9250   -98.9750    0.0000  top
+U2        MIC5219-3.3YM5               SOT-23-5                                                  151.6875   -85.9000    0.0000  top
+Y1        16mhZ                        Crystal_SMD_3215-2Pin_3.2x1.5mm                           150.5000  -112.2000    0.0000  top
+## End
