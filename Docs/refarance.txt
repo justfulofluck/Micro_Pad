@@ -3,5 +3,6 @@ https://www.hackster.io/kutluhan-aktar/arduino-based-atmega32u4-mouse-and-keyboa
 https://www.hackster.io/brian-lough/diy-bluetooth-macro-keypad-d30934
 https://www.hackster.io/simon-mugo/my-own-customized-arduino-board-76725d
 
-
 https://www.hackster.io/maninderbirgulshan/atmega32u4-au-breakout-board
+
+https://github.com/arduino-libraries/USBHost/blob/master/examples/KeyboardController/KeyboardController.ino
