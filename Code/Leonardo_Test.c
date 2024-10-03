@@ -1,3 +1,5 @@
+#include <Keyboard.h>
+
 const uint8_t led = 13;
 const uint8_t button1 = 12;
 const uint8_t button2 = 11;
@@ -6,113 +8,143 @@ const uint8_t button4 = 8;
 const uint8_t button5 = 7;
 const uint8_t button6 = 6;
 
-const uint8_t potPin = A0;
-const uint8_t ledpot = 9;
+// Define pins for rotary encoder
+const uint8_t clock_pin = 2;
+const uint8_t data_pin = 3;
+
+uint8_t lastClockState;
+uint8_t volumeChange = 0;
+
+// Button states
+bool lastButtonState1 = LOW;
+bool lastButtonState2 = LOW;
+bool lastButtonState3 = LOW;
+bool lastButtonState4 = LOW;
+bool lastButtonState5 = LOW;
+bool lastButtonState6 = LOW;
 
 #define ON HIGH
 #define OFF LOW
-  
-//Funciton Prototype
- void button_one();
- void button_two();
- void button_three();
- void button_four();
- void button_five();
- void button_six();
- void potmeter();
+
+// Function Prototypes
+void button_one();
+void button_two();
+void button_three();
+void button_four();
+void button_five();
+void button_six();
+void potmeter();
+void pressKey(uint8_t key);
 
 void setup() {
-  Serial.begin(9600);
-  pinMode(led, OUTPUT);
-  pinMode(button1, INPUT);
-  pinMode(button2, INPUT);
-  pinMode(button3, INPUT);
-  
-  pinMode(ledpot, OUTPUT);
+    Serial.begin(9600);
+    pinMode(led, OUTPUT);
+    pinMode(button1, INPUT);
+    pinMode(button2, INPUT);
+    pinMode(button3, INPUT);
+    pinMode(button4, INPUT);
+    pinMode(button5, INPUT);
+    pinMode(button6, INPUT);
+    
+    // Rotary encoder
+    pinMode(clock_pin, INPUT);
+    pinMode(data_pin, INPUT);
+
+    Keyboard.begin();
+    lastClockState = digitalRead(clock_pin);
 }
 
-void loop(){
-  button_one();
-  button_two();
-  button_three();
-  button_four();
-  button_five();
-  button_six();
-  potmeter();
+void loop() {
+    potmeter();
+    button_one();
+    button_two();
+    button_three();
+    button_four();
+    button_five();
+    button_six();
 }
 
-// functions
+// Functions
 
 void potmeter() {
-  uint8_t potValue = analogRead(potPin);
-  uint8_t brightness = map(potValue, 0, 1023, 0, 255);
-  
-  analogWrite(ledpot, brightness);
-  Serial.print("Potentiometer Value: ");
-  Serial.print(potValue);
-  Serial.print(" | LED Brightness: ");
-  Serial.print(brightness);
-  
-  delay(100);
+    uint8_t clockState = digitalRead(clock_pin);
+
+    if (clockState != lastClockState) {
+        if (digitalRead(data_pin) != clockState) {
+            pressKey(KEY_VOLUME_UP);
+        } else {
+            pressKey(KEY_VOLUME_DOWN);
+        }
+        delay(100); // Fixed syntax error
+    }
+    
+    lastClockState = clockState;
 }
 
-
-void button_one(){
-  uint8_t buttonState = digitalRead(button1);
-  
-  if (buttonState == ON) {
-    digitalWrite(led, ON);
-  } else {
-    digitalWrite(led, OFF);
-  }
+void pressKey(uint8_t key) {
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(key);
+    Keyboard.release(key);
+    Keyboard.release(KEY_LEFT_CTRL);
+    delay(100); // Delay after key press/release
 }
 
-void button_two(){
-  uint8_t buttonState = digitalRead(button2);
-  
-  if (buttonState == ON) {
-    digitalWrite(led, ON);
-  } else {
-    digitalWrite(led, OFF);
-  }
+void button_one() {
+    bool currentButtonState = digitalRead(button1);
+
+    if (currentButtonState == HIGH && lastButtonState1 == LOW) {
+        pressKey('c');
+    }
+
+    lastButtonState1 = currentButtonState;
 }
 
-void button_three(){
-  uint8_t buttonState = digitalRead(button3);
-  
-  if (buttonState == ON) {
-    digitalWrite(led, ON);
-  } else {
-    digitalWrite(led, OFF);
-  }
+void button_two() {
+    bool currentButtonState = digitalRead(button2);
+
+    if (currentButtonState == HIGH && lastButtonState2 == LOW) {
+        pressKey('v');
+    }
+
+    lastButtonState2 = currentButtonState;
 }
 
-void button_four(){
-  uint8_t buttonState = digitalRead(button4);
-  
-  if (buttonState == ON) {
-    digitalWrite(led, ON);
-  } else {
-    digitalWrite(led, OFF);
-  }
+void button_three() {
+    bool currentButtonState = digitalRead(button3);
+
+    if (currentButtonState == HIGH && lastButtonState3 == LOW) {
+        pressKey('x');
+    }
+
+    lastButtonState3 = currentButtonState;
 }
 
-void button_five(){
-  uint8_t buttonState = digitalRead(button5);
-  
-  if (buttonState == ON) {
-    digitalWrite(led, ON);
-  } else {
-    digitalWrite(led, OFF);
-  }
+void button_four() {
+    bool currentButtonState = digitalRead(button4);
+
+    if (currentButtonState == HIGH && lastButtonState4 == LOW) {
+        pressKey('v');
+    }
+
+    lastButtonState4 = currentButtonState;
 }
 
-void button_six(){
-  uint8_t buttonState = digitalRead(button6);
-  
-  if (buttonState == ON) {
-    digitalWrite(led, ON);
-  } else {
-    digitalWrite(led, OFF);
-  }
+void button_five() {
+    bool currentButtonState = digitalRead(button5);
+
+    if (currentButtonState == HIGH && lastButtonState5 == LOW) {
+        pressKey('v');
+    }
+
+    lastButtonState5 = currentButtonState;
+}
+
+void button_six() {
+    bool currentButtonState = digitalRead(button6);
+
+    if (currentButtonState == HIGH && lastButtonState6 == LOW) {
+        pressKey('v');
+    }
+
+    lastButtonState6 = currentButtonState;
 }
