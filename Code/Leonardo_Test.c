@@ -1,7 +1,7 @@
 #include <Keyboard.h>
 
 const uint8_t led = 13;
-const uint8_t button1 = 12;
+const uint8_t button1 = 12;// use these as the multiple touch
 const uint8_t button2 = 11;
 const uint8_t button3 = 10;
 const uint8_t button4 = 8;
@@ -62,6 +62,10 @@ void loop() {
     button_four();
     button_five();
     button_six();
+
+    char input[100]{
+    	mode
+    }
 }
 
 // Functions
@@ -75,7 +79,7 @@ void potmeter() {
         } else {
             pressKey(KEY_VOLUME_DOWN);
         }
-        delay(100); // Fixed syntax error
+        delay(100);
     }
     
     lastClockState = clockState;
@@ -86,7 +90,7 @@ void pressKey(uint8_t key) {
     Keyboard.press(key);
     Keyboard.release(key);
     Keyboard.release(KEY_LEFT_CTRL);
-    delay(100); // Delay after key press/release
+    delay(100);
 }
 
 void button_one() {
@@ -134,7 +138,7 @@ void button_five() {
 
     if (currentButtonState == HIGH && lastButtonState5 == LOW) {
         pressKey('v');
-    }
+    }++
 
     lastButtonState5 = currentButtonState;
 }
@@ -148,3 +152,8 @@ void button_six() {
 
     lastButtonState6 = currentButtonState;
 }
+
+
+
+
+

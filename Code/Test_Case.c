@@ -109,3 +109,26 @@ void loop() {
   
   lastClkState = clkState; // Update last state
 }
+
+
+// mode select
+#include <stdio.h>
+#include <string.h>
+
+void execom() {
+    printf("an nother command");
+}
+
+int main() {
+    char input[100];
+    printf("commad here \n");
+    scanf("%s", input);
+
+    if (strcmp(input, "set") ==0) {
+        execom();
+    } else {
+        printf("noe known error", input);
+    }
+
+    return 0;
+}
